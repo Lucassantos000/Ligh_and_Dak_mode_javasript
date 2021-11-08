@@ -7,77 +7,7 @@
     
     <title>Atividade Prática DOM</title>
 
-    <style>
-
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        .container{
-            display: flex;
-            flex-direction: column;
-            background-color: rgba(216, 207, 207, 0.612);
-
-            align-items: center;
-            justify-content: center;
-
-            width: 100vw;
-            height: 45vw;
-            
-        }
-
-        #page-title{
-            color: gray;
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: 500;
-        }
-
-        main{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-
-            margin: 15px auto;
-        }
-
-
-        #modo-selector{
-            width: 110px;
-            height: 35px;
-
-            margin: 10px;
-
-            background-image: linear-gradient(90deg, rgb(177, 171, 171) , rgba(32, 29, 29, 0.7)  );
-
-            border-radius: 15px;    
-            border: none;
-            font-size: 15px;
-            color:black;
-            font-weight: 600;
-
-            cursor: pointer;
-    
-        }
-
-        #modo-selector:hover{
-            background-image: linear-gradient(90deg ,rgb(177, 171, 171), rgba(221, 211, 211, 0.782));
-            color:rgb(238, 236, 236);
-        }
-
-        footer{
-            
-            background-image: linear-gradient(90deg, rgba(6, 66, 51, 0.612), rgba(148, 144, 144, 0.612));  
-            /*background-image: linear-gradient(90deg, rgba(189, 245, 231, 0.979), rgba(216, 215, 215, 0.857));  */
-            background-attachment:fixed;
-            background-repeat: no-repeat;
-            font-weight: 550;
-            color: rgba(46, 1, 54, 0.925);
-              }
-
-    </style>
+    <link rel="stylesheet" href="./styleAtvPratica.css">
 
 </head>
 
@@ -96,67 +26,8 @@
         Basecamp Javascript - DIO 
     </footer>
 
+        <script src="./atvPratica.js"></script>
 </body>
 
-<script>
-
-    
-    function changeMode(){
-
-        let texto = botao.outerText;
-
-        if( texto === 'Dark Mode'){
-            changeDark();
-        }
-
-        else{
-            lightMode();
-        }
-        
-    }
-
-    function changeDark(){
-        container.style.backgroundColor = "rgba(0,0,0,0.89)"
-        h1.innerHTML = "Dark Mode ON";
-        h1.style.color = "white";
-        botao.innerHTML = "Blank Mode";
-        botao.style.color = "white";
-        footer.style.backgroundImage = "linear-gradient(90deg, rgba(42,41,40,0.7) , rgba(0,0,0,1) )"
-        footer.style.color = "white";
-    }
-
-    function lightMode(){
-        container.style.backgroundColor = "rgba(216, 207, 207, 0.612)";
-        h1.innerHTML = "Light Mode ON";
-        h1.style.color = "gray";
-        botao.innerHTML = "Dark Mode";
-        botao.style.color = "black";
-        footer.style.backgroundImage = "linear-gradient(90deg, rgba(6, 66, 51, 0.612), rgba(148, 144, 144, 0.612))"
-        footer.style.color = "rgba(46, 1, 54, 0.925)";
-    }
-
-    
-
-
-
-    
-
-
-    const botao = document.getElementById('modo-selector');
-    const h1 = document.getElementById('page-title');
-    const container = document.getElementsByClassName('container')[0];
-    const footer = document.getElementsByTagName('footer')[0];
-    
-
-
-    
-    botao.addEventListener('click', changeMode);
-
- 
-    
-
-
-
-</script>
 
 </html>
